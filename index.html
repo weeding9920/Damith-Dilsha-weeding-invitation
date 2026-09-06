@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
 <title>Dilsha & Damith — Wedding Invitation</title>
 <meta name="description" content="Wedding invitation of Dilsha & Damith — 30 October 2026">
 <style>
@@ -201,10 +202,7 @@ img { max-width:100%; }
 <footer>With love, Dilsha &amp; Damith · 30 October 2026</footer>
 
 <script>
-const params = new URLSearchParams(location.search);
-const raw = params.get('guest');
-const guest = raw ? raw.trim().slice(0,60) : '';
-document.getElementById('guest').textContent = guest ? 'Dear ' + guest : 'Dear Guest';
+document.getElementById('guest').textContent = 'Dear Guest';
 
 document.getElementById('openBtn').addEventListener('click', () => {
   document.getElementById('opening').classList.add('hide');
