@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="referrer" content="no-referrer">
 <title>Dilsha & Damith — Wedding Invitation</title>
 <meta name="description" content="Wedding invitation of Dilsha & Damith — 30 October 2026">
 <style>
@@ -195,14 +194,17 @@ img { max-width:100%; }
   <div class="kicker">RSVP</div>
   <h3>Will you join us?</h3>
   <p class="lead">We would be delighted to celebrate with you. Please confirm your attendance through WhatsApp.</p>
-  <a class="btn" target="_blank" rel="noopener" href="https://wa.me/94727193175?text=Hello%20Dilsha%20%26%20Damith%2C%20I%20would%20love%20to%20attend%20your%20wedding%20on%2030%20October%202026.">RSVP via WhatsApp</a>
+  <a class="btn" target="_blank" rel="noopener" href="https://wa.me/94727193175?text=%F0%9F%92%8D%20Wedding%20RSVP%20%E2%80%94%20Dilsha%20%26%20Damith%0A%0AThank%20you%20for%20inviting%20us%20to%20your%20special%20day.%20%E2%9D%A4%EF%B8%8F%0A%0AAttending%3A%20Yes%0ATotal%20Guests%3A%20___%0AAdults%3A%20___%0AChildren%3A%20___%0A%0ALooking%20forward%20to%20celebrating%20with%20you!%20%E2%9C%A8%0A%0ARegards%2C%0A%5BName%20%2F%20Family%5D">RSVP via WhatsApp</a>
 </section>
 </main>
 
 <footer>With love, Dilsha &amp; Damith · 30 October 2026</footer>
 
 <script>
-document.getElementById('guest').textContent = 'Dear Guest';
+const params = new URLSearchParams(location.search);
+const raw = params.get('guest');
+const guest = raw ? raw.trim().slice(0,60) : '';
+document.getElementById('guest').textContent = guest ? 'Dear ' + guest : 'Dear Guest';
 
 document.getElementById('openBtn').addEventListener('click', () => {
   document.getElementById('opening').classList.add('hide');
